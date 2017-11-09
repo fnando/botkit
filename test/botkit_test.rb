@@ -3,11 +3,24 @@
 require "test_helper"
 
 class BotkitTest < Minitest::Test
-  def test_that_it_has_a_version_number
-    refute_nil ::Botkit::VERSION
+  test "reports failures back to the bot instance" do
+    error = StandardError.new("Failure")
+    bot = Object.new
+
+    bot.expects(:report_exception).with(error)
+    bot.expects(:call).raises(error)
+    bot.stubs(:halt?).returns(true)
+
+    Botkit.run(bot)
   end
 
-  def test_it_does_something_useful
-    assert false
+  test "sets interval during every loop" do
+    bot = Object.new
+
+    bot.stubs(:call)
+    bot.stubs(:halt?).returns(false, true)
+    Botkit::Runner.any_instance.expects(:sleep).with(1)
+
+    Botkit.run(bot)
   end
 end
