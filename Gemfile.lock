@@ -1,8 +1,9 @@
 PATH
   remote: .
   specs:
-    botkit (0.0.0)
+    botkit (0.0.1)
       aitch
+      signal
 
 GEM
   remote: https://rubygems.org/
@@ -21,6 +22,7 @@ GEM
     nokogiri (1.8.1)
       mini_portile2 (~> 2.3.0)
     rake (12.2.1)
+    signal (1.1.0)
     simplecov (0.15.1)
       docile (~> 1.1.0)
       json (>= 1.8, < 3)
@@ -39,4 +41,4 @@ DEPENDENCIES
   simplecov
 
 BUNDLED WITH
-   1.16.0.pre.3
+   1.16.0
