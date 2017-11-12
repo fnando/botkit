@@ -38,7 +38,7 @@ module Botkit
 
       {
         command: command,
-        text: text || input,
+        text: command ? text : input,
         matches: matches&.named_captures
       }
     end
