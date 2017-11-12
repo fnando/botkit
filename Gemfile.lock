@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    botkit (0.0.3)
+    botkit (0.0.4)
       aitch
       signal
 
