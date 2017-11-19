@@ -8,6 +8,10 @@ module Botkit
     # after the current loop.
     attr_writer :halt
 
+    def initialize
+      @halt = false
+    end
+
     # Detect if bot should halt himself from the loop.
     def halt?
       @halt
@@ -31,15 +35,13 @@ module Botkit
       end
     end
 
-    def parse_message(input, matcher = nil)
+    def parse_message(input)
       input = input.to_s
       _, command, text = *input.match(%r{\A/([^ @]+)(?:@.*?bot)?(?:\s+(.*?))?\z}i)
-      matches = text.to_s.match(matcher) if matcher
 
       {
         command: command,
-        text: command ? text : input,
-        matches: matches&.named_captures
+        text: command ? text : input
       }
     end
 

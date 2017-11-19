@@ -2,15 +2,14 @@
 
 module Botkit
   class Message
-    attr_reader :text, :command, :matches, :raw, :options, :channel_id
+    attr_reader :text, :command, :raw, :options, :channel_id
 
-    def initialize(text:, raw: {}, channel_id: nil, command: nil, matches: nil, options: {})
+    def initialize(text:, raw: {}, channel_id: nil, command: nil, options: {})
       @text = text
       @command = command
       @raw = raw
       @channel_id = channel_id
       @options = options
-      @matches = matches
     end
 
     def command?

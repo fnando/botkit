@@ -11,13 +11,13 @@ module Botkit
 
     def call
       loop do
-        next_tick
+        tick
         break if bot.halt?
         sleep(polling)
       end
     end
 
-    private def next_tick
+    private def tick
       bot.call
     rescue StandardError => exception
       bot.report_exception(exception)
