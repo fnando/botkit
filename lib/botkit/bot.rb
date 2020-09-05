@@ -37,7 +37,8 @@ module Botkit
 
     def parse_message(input)
       input = input.to_s
-      _, command, text = *input.match(%r{\A/([^ @]+)(?:@.*?bot)?(?:\s+(.*?))?\z}i)
+      _, command, text =
+        *input.match(%r{\A/([^ @]+)(?:@.*?bot)?(?:\s+(.*?))?\z}i)
 
       {
         command: command,

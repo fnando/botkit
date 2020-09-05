@@ -25,7 +25,7 @@ class BotkitTest < Minitest::Test
   test "triggers message event" do
     bot = FakeBot.new
     message = Botkit::Message.new(text: "TEXT")
-    callable = -> {}
+    callable = -> { }
 
     bot.message(&callable)
 
@@ -37,7 +37,7 @@ class BotkitTest < Minitest::Test
   test "triggers command event" do
     bot = FakeBot.new
     message = Botkit::Message.new(**bot.parse_message("/foo TEXT"))
-    callable = -> {}
+    callable = -> { }
 
     bot.command(:foo, &callable)
 
@@ -49,7 +49,7 @@ class BotkitTest < Minitest::Test
   test "triggers exception event" do
     bot = FakeBot.new
     error = StandardError.new("ERROR")
-    callable = -> {}
+    callable = -> { }
 
     bot.exception(&callable)
 

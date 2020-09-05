@@ -4,7 +4,14 @@ module Botkit
   class Message
     attr_reader :text, :command, :raw, :options, :channel_id, :id
 
-    def initialize(text:, raw: {}, channel_id: nil, command: nil, options: {}, id: nil)
+    def initialize(
+      text:,
+      raw: {},
+      channel_id: nil,
+      command: nil,
+      options: {},
+      id: nil
+    )
       @text = text
       @command = command
       @raw = raw
