@@ -6,7 +6,9 @@ Gem::Specification.new do |spec|
   spec.name          = "botkit"
   spec.version       = Botkit::VERSION
   spec.authors       = ["Nando Vieira"]
-  spec.email         = ["fnando.vieira@gmail.com"]
+  spec.email         = ["me@fnando.com"]
+  spec.metadata      = {"rubygems_mfa_required" => "true"}
+  spec.required_ruby_version = ">= 3.0.0"
 
   spec.summary       = "A simple chatbot framework"
   spec.description   = spec.summary
@@ -21,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "aitch"
-  spec.add_dependency "signal"
+  spec.add_dependency "voltage"
 
   spec.add_development_dependency "bundler"
   spec.add_development_dependency "minitest-utils"

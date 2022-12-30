@@ -2,7 +2,7 @@
 
 module Botkit
   class Bot
-    include Signal
+    include Voltage
 
     # When setting `bot.halt = true`, the bot will be halted
     # after the current loop.
