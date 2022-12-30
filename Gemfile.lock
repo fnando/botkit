@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    botkit (0.0.5)
+    botkit (0.0.6)
       aitch
       voltage
 
@@ -60,7 +60,7 @@ GEM
     voltage (0.1.0)
 
 PLATFORMS
-  ruby
+  arm64-darwin-22
 
 DEPENDENCIES
   botkit!
@@ -72,4 +72,4 @@ DEPENDENCIES
   simplecov
 
 BUNDLED WITH
-   2.3.26
+   2.4.1
